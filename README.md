@@ -33,10 +33,10 @@ toolchain, target system & firmware packages.
 3.1. With the config menu open, select these:
   Target System:  MediaTek Ralink MIPS
   Subtarget:      MT76x8 based boards
-  Target Profile: TP-Link TL-WR840n v6.2
+  Target Profile: TP-Link TL-WR840N v6.2
 
 3.2. (Optional) Change to fit new features:
- + Enable (built-in)     - Disable
+ + Change/enable (built-in)     - Disable
 
  Target Images > squashfs:
    + Block size: 512 (1024 if bin is still big, slower boot time)
@@ -63,6 +63,8 @@ toolchain, target system & firmware packages.
 
  Network:
    - ppp
+   Web Servers/Proxies:
+     + uhttpd
 
  Kernel modules:
    Wireless Drivers > kmod-mac80211:
@@ -74,6 +76,10 @@ toolchain, target system & firmware packages.
    Modules:
      + luci-base
      + Minify Lua sources
+     + luci-mod-admin-full
+     + luci-mod-network
+     + luci-mod-status
+     + luci-mod-system
    Themes:
      + luci-theme-bootstrap
 
