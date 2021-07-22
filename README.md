@@ -1,4 +1,4 @@
-I've slightly modified the guide to be specifically for this router.
+I've slightly modified the guide to be for this router and other routers that have a 4MB flash.
 
 For convenience, wifi is enabled by default on first boot. If you do not want this, remove ``./target/linux/ramips/base-files/etc/uci-defaults/99_wireless_config``
 
@@ -54,7 +54,7 @@ toolchain, target system & firmware packages.
      - Compile the kernel with symbol table info
      - Compile the kernel with debug info
      + Number of squashfs fragments cached: 1
-     + Compiler optimination level: Optimize for size
+     + Compiler optimization level: Optimize for size
 
  Base system:
    - opkg
@@ -83,13 +83,20 @@ toolchain, target system & firmware packages.
    Themes:
      + luci-theme-bootstrap
 
-Read more in https://openwrt.org/docs/guide-user/additional-software/saving_space
+You may also make all kernel modules built-in, saves a bit of image size
+and RAM. Be wary that some stuff might break when doing this, so keep a copy
+of the kernel .config before doing so.
+
+Kernel config is located at:
+./build_dir/target-mipsel_24kc_musl/linux-ramips_mt76x8/linux-4.14.221
+
+Read more at https://openwrt.org/docs/guide-user/additional-software/saving_space
 
 4. Run "make" to build your firmware. This will download all sources, build
 the cross-compile toolchain and then cross-compile the Linux kernel & all
 chosen applications for your target system.
 
-.bin files are located in ./bin/targets/ramips/mt76x8
+.bin files are located at ./bin/targets/ramips/mt76x8
 If your sysupgrade bin goes over 3.5MB, there will not be enough
 space for jffs2 to save. It'll boot, but settings won't persist
 between reboots.
