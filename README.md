@@ -88,7 +88,7 @@ and RAM. Be wary that some stuff might break when doing this, so keep a copy
 of the kernel .config before doing so.
 
 Kernel config is located at:
-./build_dir/target-mipsel_24kc_musl/linux-ramips_mt76x8/linux-4.14.221
+./build_dir/target-mipsel_24kc_musl/linux-ramips_mt76x8/linux-4.14.xxx
 
 Read more at https://openwrt.org/docs/guide-user/additional-software/saving_space
 
