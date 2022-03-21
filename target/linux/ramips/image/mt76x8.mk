@@ -257,7 +257,7 @@ define Device/tl-wr840n-v6
   TPLINK_HWREV := 0x1
   TPLINK_HWREVADD := 0x7
   TPLINK_HVERSION := 3
-  SUPPORTED_DEVICES += tl-wr840n-v6
+  SUPPORTED_DEVICES += tplink,tl-wr840n-v6
   DEFAULT := n
   IMAGES := sysupgrade.bin tftp-recovery.bin
   IMAGE/tftp-recovery.bin := pad-extra 64k | $$(IMAGE/factory.bin)
@@ -274,7 +274,7 @@ define Device/tl-wr840n-v6.2
   TPLINK_HWREV := 0x1
   TPLINK_HWREVADD := 0x7
   TPLINK_HVERSION := 3
-  SUPPORTED_DEVICES += tl-wr840n-v6.2
+  SUPPORTED_DEVICES += tplink,tl-wr840n-v6.2
   DEFAULT := n
   IMAGES := sysupgrade.bin tftp-recovery.bin
   IMAGE/tftp-recovery.bin := pad-extra 64k | $$(IMAGE/factory.bin)
