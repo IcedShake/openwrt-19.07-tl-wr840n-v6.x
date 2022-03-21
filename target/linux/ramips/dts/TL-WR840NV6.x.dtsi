@@ -5,17 +5,12 @@
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
 
-/* GPIO leds from: https://github.com/milankragujevic/openwrt-wr840n-v620-old/blob/5075abed30740b9b930e7ef3da52d8f487bc4570/target/linux/ramips/dts/mt7628an_tplink_tl-wr840n-v6.dts */
-
 / {
-	compatible = "tplink,tl-wr840n-v6.2", "mediatek,mt7628an-soc";
-	model = "TP-Link TL-WR840N v6.2";
-
 	aliases {
 		led-boot = &led_power_orange;
-        led-failsafe = &led_power_green;
-        led-running = &led_power_green;
-        led-upgrade = &led_power_orange;
+		led-failsafe = &led_power_green;
+		led-running = &led_power_green;
+		led-upgrade = &led_power_orange;
 	};
 
 	chosen {
@@ -33,18 +28,18 @@
 	};
 
 	/* LED used is dual-color,dual lead LED */
-    leds {
-        compatible = "gpio-leds";
+	leds {
+		compatible = "gpio-leds";
 
-        lan {
-            label = "green:lan";
-            gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
-        };
+		lan {
+			label = "green:lan";
+			gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
+		};
 
-        wlan {
-            label = "green:wlan";
-            gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
-        };
+		wlan {
+			label = "green:wlan";
+			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
+		};
 
 		led_power_orange: wan {
 			label = "orange:wan";
@@ -55,7 +50,7 @@
 			label = "green:wan";
 			gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
 		};
-    };
+	};
 };
 
 &spi0 {
@@ -107,18 +102,17 @@
 
 &ethernet {
 	mtd-mac-address = <&factory 0xf100>;
-    mtd-mac-address-increment = <1>;
 };
 
 &esw {
-    mediatek,portmap = <0x3e>;
+	mediatek,portmap = <0x3e>;
 };
 
 &pinctrl {
 	state_default: pinctrl0 {
 		gpio {
-			ralink,group = "p1led_an", "p3led_an", "p4led_an", "wled_an", "perst", "wdt";
 			ralink,function = "gpio";
+            ralink,group = "p1led_an", "p3led_an", "p4led_an", "wled_an", "perst";
 		};
 	};
 };

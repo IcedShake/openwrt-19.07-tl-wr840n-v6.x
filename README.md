@@ -33,9 +33,9 @@ toolchain, target system & firmware packages.
 3.1. With the config menu open, select these:
   Target System:  MediaTek Ralink MIPS
   Subtarget:      MT76x8 based boards
-  Target Profile: TP-Link TL-WR840N v6.2
+  Target Profile: TP-Link TL-WR840N v6.x (use v6 for v6.1)
 
-3.2. (Optional) Change to fit new features:
+3.2. (Optional) Minimal config with LuCi:
  + Change/enable (built-in)     - Disable
 
  Target Images > squashfs:
@@ -64,7 +64,7 @@ toolchain, target system & firmware packages.
  Network:
    - ppp
    Web Servers/Proxies:
-     + uhttpd
+     + uhttpd (disable if not using LuCi)
 
  Kernel modules:
    Wireless Drivers > kmod-mac80211:

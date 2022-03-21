@@ -1,0 +1,7 @@
+#include "TL-WR840NV6.x.dtsi"
+
+/ {
+	compatible = "tplink,tl-wr840n-v6", "mediatek,mt7628an-soc";
+	model = "TP-Link TL-WR840N v6";
+};
+
