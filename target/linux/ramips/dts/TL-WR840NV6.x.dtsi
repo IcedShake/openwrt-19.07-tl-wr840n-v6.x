@@ -26,31 +26,6 @@
 			linux,code = <KEY_RESTART>;
 		};
 	};
-
-	/* LED used is dual-color,dual lead LED */
-	leds {
-		compatible = "gpio-leds";
-
-		lan {
-			label = "green:lan";
-			gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
-		};
-
-		wlan {
-			label = "green:wlan";
-			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
-		};
-
-		led_power_orange: wan {
-			label = "orange:wan";
-			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
-		};
-
-		led_power_green: power {
-			label = "green:wan";
-			gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
-		};
-	};
 };
 
 &spi0 {
@@ -108,11 +83,8 @@
 	mediatek,portmap = <0x3e>;
 };
 
-&pinctrl {
-	state_default: pinctrl0 {
-		gpio {
-			ralink,function = "gpio";
-            ralink,group = "p1led_an", "p3led_an", "p4led_an", "wled_an", "perst";
-		};
+&state_default {
+	ralinkgpio: gpio {
+		ralink,function = "gpio";
 	};
 };
