@@ -8,23 +8,23 @@
 		compatible = "gpio-leds";
 
 		lan {
-			label = "green:lan";
+			label = "tl-wr840n-v6.2:green:lan";
 			gpios = <&gpio1 7 GPIO_ACTIVE_LOW>;
 		};
 
 		wlan {
-			label = "green:wlan";
+			label = "tl-wr840n-v6.2:green:wlan";
 			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
 		};
 
-		led_power_orange: wan {
-			label = "orange:wan";
-			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+		led_power_green: wan {
+			label = "tl-wr840n-v6.2:green:wan";
+			gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
 		};
 
-		led_power_green: power {
-			label = "green:wan";
-			gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
+		led_power_orange: power {
+			label = "tl-wr840n-v6.2:orange:wan";
+			gpios = <&gpio1 10 GPIO_ACTIVE_LOW>;
 		};
 	};
 };
@@ -34,5 +34,5 @@
 };
 
 &ralinkgpio {
-	ralink,group = "p1led_an", "p3led_an", "p4led_an", "wled_an", "perst";
+	ralink,group = "p1led_an", "p3led_an", "p4led_an", "perst";
 };
