@@ -264,6 +264,16 @@ define Device/tl-wr840n-v6
 endef
 TARGET_DEVICES += tl-wr840n-v6
 
+define Device/tl-wr840n-v6-8m
+  $(Device/tl-wr840n-v6)
+  DTS := TL-WR840NV6-8M
+  IMAGE_SIZE := 8068k
+  DEVICE_TITLE := TP-Link TL-WR840N v6 8M
+  TPLINK_FLASHLAYOUT := 8Mmtk
+  SUPPORTED_DEVICES += tplink,tl-wr840n-v6-8m
+endef
+TARGET_DEVICES += tl-wr840n-v6-8m
+
 define Device/tl-wr840n-v6.2
   $(Device/tplink)
   DTS := TL-WR840NV6.2

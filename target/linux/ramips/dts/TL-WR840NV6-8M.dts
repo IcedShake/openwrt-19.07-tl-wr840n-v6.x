@@ -1,0 +1,39 @@
+#include "TL-WR840NV6-8M.dtsi"
+//This is to build a custom image to spi mod 8mb
+/ {
+	compatible = "tplink,tl-wr840n-v6-8m", "mediatek,mt7628an-soc";
+	model = "TP-Link TL-WR840N v6 8M";
+
+	leds {
+		compatible = "gpio-leds";
+
+		lan {
+			label = "tl-wr840n-v6-8m:green:lan";
+			gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
+		};
+
+		led_power: power {
+			label = "tl-wr840n-v6-8m:green:power";
+			gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
+		};
+
+		wan {
+			label = "tl-wr840n-v6-8m:green:wan";
+			gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
+		};
+
+		wlan {
+			label = "tl-wr840n-v6-8m:green:wlan";
+			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
+		};
+
+		wps {
+			label = "tl-wr840n-v6-8m:green:wps";
+			gpios = <&gpio1 5 GPIO_ACTIVE_LOW>;
+		};
+	};
+};
+
+&ralinkgpio {
+	ralink,group = "p0led_an", "p2led_an", "perst", "wdt";
+};

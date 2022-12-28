@@ -4,17 +4,39 @@
 	compatible = "tplink,tl-wr840n-v6", "mediatek,mt7628an-soc";
 	model = "TP-Link TL-WR840N v6";
 
+	aliases {
+		led-boot = &led_power;
+		led-failsafe = &led_power;
+		led-running = &led_power;
+		led-upgrade = &led_power;
+	};
+
 	leds {
 		compatible = "gpio-leds";
 
-		led_power_green: power {
-			label = "green:wan";
-			gpios = <&gpio1 8 GPIO_ACTIVE_LOW>;
+		lan {
+			label = "tl-wr840n-v6:green:lan";
+			gpios = <&gpio1 9 GPIO_ACTIVE_LOW>;
 		};
 
-		led_power_orange: wan {
-			label = "orange:wan";
-			gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+		led_power: power {
+			label = "tl-wr840n-v6:green:power";
+			gpios = <&gpio1 4 GPIO_ACTIVE_LOW>;
+		};
+
+		wan {
+			label = "tl-wr840n-v6:green:wan";
+			gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
+		};
+
+		wlan {
+			label = "tl-wr840n-v6:green:wlan";
+			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
+		};
+
+		wps {
+			label = "tl-wr840n-v6:green:wps";
+			gpios = <&gpio1 5 GPIO_ACTIVE_LOW>;
 		};
 	};
 };
